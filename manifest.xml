@@ -4,7 +4,7 @@
            xsi:type="Presentation">
     <Id>f413681d-c424-48d6-b036-50d59a3ed710</Id>
     <Version>1.0.0.0</Version>
-    <ProviderName>Your Company</ProviderName>
+    <ProviderName>WaterMark</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Hello World Add-in" />
     <Description DefaultValue="Adds 'Hello World' text to slides." />
