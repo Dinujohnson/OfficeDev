@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="Presentation">
+    <Id>f413681d-c424-48d6-b036-50d59a3ed710</Id>
+    <Version>1.0.0.0</Version>
+    <ProviderName>Your Company</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <DisplayName DefaultValue="Hello World Add-in" />
+    <Description DefaultValue="Adds 'Hello World' text to slides." />
+    <Hosts>
+        <Host Name="PresentationWeb" />
+    </Hosts>
+    <DefaultSettings>
+        <SourceLocation DefaultValue="https://kovenantztechnologies.sharepoint.com/:u:/s/KovenantzTechnologiesPVTLTD/EeyDUqIyAMdPn2vy5I4M4VQBwQq34zzbDOLGbxdhpVFuRw?e=K3cYFi" />
+    </DefaultSettings>
+</OfficeApp>
