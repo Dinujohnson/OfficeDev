@@ -8,6 +8,7 @@
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Hello World Add-in" />
     <Description DefaultValue="Adds 'Hello World' text to slides." />
+    <IconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-32.png"/>
     <Hosts>
         <Host Name="PresentationWeb" />
     </Hosts>
