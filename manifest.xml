@@ -12,6 +12,6 @@
         <Host Name="PresentationWeb" />
     </Hosts>
     <DefaultSettings>
-        <SourceLocation DefaultValue="https://kovenantztechnologies.sharepoint.com/:u:/s/KovenantzTechnologiesPVTLTD/EeyDUqIyAMdPn2vy5I4M4VQBwQq34zzbDOLGbxdhpVFuRw?e=K3cYFi" />
+        <SourceLocation DefaultValue="https://dinujohnson.github.io/OfficeDev/taskpane.html" />
     </DefaultSettings>
 </OfficeApp>
