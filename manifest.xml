@@ -10,6 +10,7 @@
     <Description DefaultValue="Adds 'Hello World' text to slides." />
     <IconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-32.png"/>
     <HighResolutionIconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-64.png"/>
+    <SupportUrl DefaultValue="https://learn.microsoft.com/office/dev/add-ins/overview/office-add-in-code-samples"/>      
     <Hosts>
         <Host Name="PresentationWeb" />
     </Hosts>
