@@ -1,4 +1,3 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +7,7 @@
 </head>
 
 <body>
-    <p>This add-in will insert 'CONFIDENTIAL' in the current selection of the slide.</p>
+    <p>This add-in will insert a 'CONFIDENTIAL' watermark in the current selection of the slide.</p>
     <button id="addButton">Add Watermark</button>
 </body>
 
@@ -16,22 +15,24 @@
     Office.onReady((info) => {
         // Check that we loaded into PowerPoint
         if (info.host === Office.HostType.PowerPoint) {
-            document.getElementById("addButton").onclick = addConfidentialText;
+            document.getElementById("addButton").onclick = addWatermark;
         }
     });
 
-    async function addConfidentialText() {
-
-           // Set coercion type to HTML since we want to apply styling
+    async function addWatermark() {
+        try {
+            // Set coercion type to HTML since we want to apply styling
             const options = { coercionType: Office.CoercionType.Html };
 
-            // Construct the HTML for the text with increased font size
-            const confidentialHtml = '<div style="font-size: 36px;">CONFIDENTIAL</div>';
+            // Construct the HTML for the watermark with increased font size
+            const watermarkHtml = '<div style="font-size: 36px;">CONFIDENTIAL</div>';
 
             // Insert the HTML with styling into the current selection
-            await Office.context.document.setSelectedDataAsync(confidentialHtml, options);
+            await Office.context.document.setSelectedDataAsync(watermarkHtml, options);
+        } catch (error) {
+            console.error("Error inserting watermark:", error);
+        }
     }
-
 </script>
 
 </html>
