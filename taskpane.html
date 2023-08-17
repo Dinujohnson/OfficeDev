@@ -22,14 +22,14 @@
 
     async function addConfidentialText() {
 
-        // Set coercion type to text since 
-        const options = { coercionType: Office.CoercionType.Text };
+           // Set coercion type to HTML since we want to apply styling
+            const options = { coercionType: Office.CoercionType.Html };
 
-        // clear current selection
-        await Office.context.document.setSelectedDataAsync(" ", options);
+            // Construct the HTML for the text with increased font size
+            const confidentialHtml = '<div style="font-size: 36px;">CONFIDENTIAL</div>';
 
-        // Set text in selection to 'Hello world!'
-        await Office.context.document.setSelectedDataAsync("CONFIDENTIAL", options);
+            // Insert the HTML with styling into the current selection
+            await Office.context.document.setSelectedDataAsync(confidentialHtml, options);
     }
 
 </script>
