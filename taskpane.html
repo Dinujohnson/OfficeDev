@@ -9,12 +9,12 @@
 
 <body>
     <p>This add-in will insert 'CONFIDENTIAL' in the current selection of the slide.</p>
-    <button onclick="addConfidentialText()">Add</button>
+    <button id="addButton">Add</button>
 </body>
 
 <style>
     /* Add CSS styling for the inserted text */
-    #confidentialText {
+    .confidential-text {
         font-size: 24px; /* Change the font size as needed */
         font-weight: bold;
         color: red; /* Change the text color as needed */
@@ -35,10 +35,13 @@
         const options = { coercionType: Office.CoercionType.Html };
 
         // Construct the HTML for the text with styling
-        const confidentialHtml = '<div id="confidentialText">CONFIDENTIAL</div>';
+        const confidentialHtml = '<div class="confidential-text">CONFIDENTIAL</div>';
 
         // Insert the HTML with styling into the current selection
         await Office.context.document.setSelectedDataAsync(confidentialHtml, options);
+        } catch (error) {
+            console.error("Error inserting confidential text:", error);
+        }
     }
 
 </script>
