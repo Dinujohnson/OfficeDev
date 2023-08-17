@@ -8,7 +8,7 @@
     <ProviderName>Kovenantz</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Watermark" />
-    <Description DefaultValue="A simple hello world Office Add-in." />
+    <Description DefaultValue="A simple Watermark Office Add-in." />
     <IconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-32.png"/>
     <HighResolutionIconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-64.png"/>
     <SupportUrl DefaultValue="https://learn.microsoft.com/office/dev/add-ins/overview/office-add-in-code-samples"/>      
@@ -70,14 +70,14 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://dinujohnson.github.io/OfficeDev/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Get started with the Hello world add-in!"/>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with Watermark add-in!"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Kovenantz Add-in"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Water Mark"/>
         <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Water Mark"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Hello world' button to get started."/>
-        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Hello world add-in"/>
+        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Add' button to get started."/>
+        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Watermark add-in"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
