@@ -21,14 +21,19 @@
 
     async function addWatermark() {
         try {
-            // Set coercion type to HTML since we want to apply styling
-            const options = { coercionType: Office.CoercionType.Html };
+            await Word.run(async (context) => {
+                const selection = context.document.getSelection();
 
-            // Construct the HTML for the watermark with increased font size
-            const watermarkHtml = '<div style="font-size: 36px;">CONFIDENTIAL</div>';
+                // Insert the watermark text
+                const watermark = selection.insertText("CONFIDENTIAL", "End");
 
-            // Insert the HTML with styling into the current selection
-            await Office.context.document.setSelectedDataAsync(watermarkHtml, options);
+                // Apply formatting to the watermark text
+                watermark.font.size = 36;
+                watermark.font.bold = true;
+                watermark.font.color = "#FF0000"; // Red color
+
+                await context.sync();
+            });
         } catch (error) {
             console.error("Error inserting watermark:", error);
         }
