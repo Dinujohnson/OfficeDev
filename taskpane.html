@@ -12,14 +12,6 @@
     <button onclick="addConfidentialText()">Add</button>
 </body>
 
-<style>
-    .confidential-text {
-        font-size: 24px; 
-        font-weight: bold;
-        color: red; 
-    }
-</style>
-
 <script>
     Office.onReady((info) => {
         // Check that we loaded into PowerPoint
@@ -29,14 +21,15 @@
     });
 
     async function addConfidentialText() {
-            // Set coercion type to HTML since we want to apply styling
-            const options = { coercionType: Office.CoercionType.Text };
 
-            // Construct the HTML for the text with styling
-            await Office.context.document.setSelectedDataAsync(" ", options);
+        // Set coercion type to text since 
+        const options = { coercionType: Office.CoercionType.Text };
 
-            // Insert the HTML with styling into the current selection
-            await Office.context.document.setSelectedDataAsync(CONFIDENTIAL, options);        
+        // clear current selection
+        await Office.context.document.setSelectedDataAsync(" ", options);
+
+        // Set text in selection to 'Hello world!'
+        await Office.context.document.setSelectedDataAsync("CONFIDENTIAL", options);
     }
 
 </script>
