@@ -30,15 +30,15 @@
     });
 
     async function addConfidentialText() {
+        try {
+            // Set coercion type to HTML since we want to apply styling
+            const options = { coercionType: Office.CoercionType.Html };
 
-        // Set coercion type to HTML since we want to apply styling
-        const options = { coercionType: Office.CoercionType.Html };
+            // Construct the HTML for the text with styling
+            const confidentialHtml = '<div class="confidential-text">CONFIDENTIAL</div>';
 
-        // Construct the HTML for the text with styling
-        const confidentialHtml = '<div class="confidential-text">CONFIDENTIAL</div>';
-
-        // Insert the HTML with styling into the current selection
-        await Office.context.document.setSelectedDataAsync(confidentialHtml, options);
+            // Insert the HTML with styling into the current selection
+            await Office.context.document.setSelectedDataAsync(confidentialHtml, options);
         } catch (error) {
             console.error("Error inserting confidential text:", error);
         }
