@@ -32,10 +32,10 @@
     async function addConfidentialText() {
 
         // Set coercion type to HTML since we want to apply styling
-        const options = { coercionType: Office.CoercionType.Html };
+        const options = { coercionType: Office.CoercionType.Text };
 
         // Construct the HTML for the text with styling
-        const confidentialHtml = '<div id="confidentialText">CONFIDENTIAL</div>';
+        const confidentialHtml = '<div style="font-size: 24px; font-weight: bold; color: red;">CONFIDENTIAL</div>';
 
         // Insert the HTML with styling into the current selection
         await Office.context.document.setSelectedDataAsync(confidentialHtml, options);
