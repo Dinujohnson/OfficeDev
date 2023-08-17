@@ -12,6 +12,13 @@
     <button onclick="addConfidentialText()">Add Watermark</button>
 </body>
 
+<style>
+    .confidential-text {
+        font-size: 70px;
+    }
+
+</style>
+
 <script>
     Office.onReady((info) => {
         // Check that we loaded into PowerPoint
@@ -22,14 +29,14 @@
 
     async function addConfidentialText() {
 
-        // Set coercion type to text since 
-        const options = { coercionType: Office.CoercionType.Text };
+        
+        const options = { coercionType: Office.CoercionType.Html };
 
-        // clear current selection
-        await Office.context.document.setSelectedDataAsync(" ", options);
+       
+        const confidentialHtml = '<div class="confidential-text">CONFIDENTIAL</div>';
 
-        // Set text in selection to 'Hello world!'
-        await Office.context.document.setSelectedDataAsync("CONFIDENTIAL", options);
+       
+        await Office.context.document.setSelectedDataAsync(confidentialHtml, options);
     }
 
 </script>
