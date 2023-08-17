@@ -21,15 +21,19 @@
     });
 
     async function addConfidentialText() {
+        try {
+            const selection = Office.context.document.getSelectedData();
 
-        // Set coercion type to text since 
-        const options = { coercionType: Office.CoercionType.Text };
-
-        // clear current selection
-        await Office.context.document.setSelectedDataAsync(" ", options);
-
-        // Set text in selection to 'Hello world!'
-        await Office.context.document.setSelectedDataAsync("CONFIDENTIAL", options);
+            // Check if there's a selected range
+            if (selection && selection.value) {
+                const confidentialText = "<div style='font-size: 70px;'>CONFIDENTIAL</div>";
+                await Office.context.document.setSelectedDataAsync(confidentialText, { coercionType: Office.CoercionType.Html });
+            } else {
+                console.log("No selection found.");
+            }
+        } catch (error) {
+            console.error("Error inserting confidential text:", error);
+        }
     }
 
 </script>
