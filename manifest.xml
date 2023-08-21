@@ -28,34 +28,27 @@
             <Description resid="GetStarted.Description"/>
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted>
-          <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <OfficeTab id="TabHome">
-              <Group id="CommandsGroup">
-                <Label resid="CommandsGroup.Label"/>
-                <Icon>
-                  <bt:Image size="16" resid="Icon.16x16"/>
-                  <bt:Image size="32" resid="Icon.32x32"/>
-                  <bt:Image size="80" resid="Icon.80x80"/>
-                </Icon>
-                <Control xsi:type="Button" id="TaskpaneButton">
-                  <Label resid="TaskpaneButton.Label"/>
-                  <Supertip>
-                    <Title resid="TaskpaneButton.SupertipTitle"/>
-                    <Description resid="TaskpaneButton.SupertipText"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
+          <ExtensionPoint xsi:type="CustomPane">
+                        <OfficeTab id="TabHome">
+                            <CustomTab id="CustomTab">
+                                <Label resid="CustomTab.Label"/>
+                                <Group id="CustomGroup">
+                                    <Label resid="CustomGroup.Label"/>
+                                    <Control xsi:type="Button" id="CustomButton">
+                                        <Label resid="CustomButton.Label"/>
+                                        <Supertip>
+                                            <Title resid="CustomButton.Label"/>
+                                            <Description resid="CustomButton.Tooltip"/>
+                                        </Supertip>
+                                        <IconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-32.png"/>
+                                        <Action xsi:type="ExecuteFunction">
+                                            <FunctionName>addWatermark</FunctionName>
+                                        </Action>
+                                    </Control>
+                                </Group>
+                            </CustomTab>
+                        </OfficeTab>
+                    </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>
