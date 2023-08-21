@@ -23,32 +23,26 @@
     <Hosts>
       <Host xsi:type="Presentation">
         <DesktopFormFactor>
-          <GetStarted>
-            <Title resid="GetStarted.Title"/>
-            <Description resid="GetStarted.Description"/>
-            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
-          </GetStarted>
           <ExtensionPoint xsi:type="CustomPane">
-                        <OfficeTab id="TabHome">
-                            <CustomTab id="CustomTab">
-                                <Label resid="CustomTab.Label"/>
-                                <Group id="CustomGroup">
-                                    <Label resid="CustomGroup.Label"/>
-                                    <Control xsi:type="Button" id="CustomButton">
-                                        <Label resid="CustomButton.Label"/>
-                                        <Supertip>
-                                            <Title resid="CustomButton.Label"/>
-                                            <Description resid="CustomButton.Tooltip"/>
-                                        </Supertip>
-                                        <IconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-32.png"/>
-                                        <Action xsi:type="ExecuteFunction">
-                                            <FunctionName>addWatermark</FunctionName>
-                                        </Action>
-                                    </Control>
-                                </Group>
-                            </CustomTab>
-                        </OfficeTab>
-                    </ExtensionPoint>
+            <OfficeTab id="TabHome">
+              <CustomTab id="CustomTab" label="Watermark">
+                <Group id="CustomGroup" label="Watermark Group">
+                  <Label resid="CustomGroup.Label"/>
+                  <Control xsi:type="Button" id="CustomButton" label="Add Watermark">
+                    <Label resid="CustomButton.Label"/>
+                    <Supertip>
+                      <Title resid="CustomButton.Label"/>
+                      <Description resid="CustomButton.Tooltip"/>
+                    </Supertip>
+                    <IconUrl DefaultValue="https://dinujohnson.github.io/OfficeDev/Assets/icon-32.png"/>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>addWatermark</FunctionName>
+                    </Action>
+                  </Control>
+                </Group>
+              </CustomTab>
+            </OfficeTab>
+          </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>
@@ -64,13 +58,13 @@
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with Watermark add-in!"/>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Kovenantz Add-in"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Water Mark"/>
-        <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Water Mark"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="Watermark Add-in"/>
+        <bt:String id="CustomGroup.Label" DefaultValue="Watermark Group"/>
+        <bt:String id="CustomButton.Label" DefaultValue="Add Watermark"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Add' button to get started."/>
-        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Watermark add-in"/>
+        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded successfully. Go to the HOME tab and click the 'Add Watermark' button to get started."/>
+        <bt:String id="CustomButton.Tooltip" DefaultValue="Add a 'CONFIDENTIAL' watermark to the current selection of the slide."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
