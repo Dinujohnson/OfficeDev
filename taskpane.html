@@ -1,40 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 </head>
-
 <body>
     <p>This add-in will insert a 'CONFIDENTIAL' watermark in the current selection of the slide.</p>
-    <button id="addButton">Add Watermark</button>
 </body>
-
-<script>
-    Office.onReady((info) => {
-        // Check that we loaded into PowerPoint
-        if (info.host === Office.HostType.PowerPoint) {
-            document.getElementById("addButton").onclick = addWatermark;
-        }
-    });
-
-    async function addWatermark() {
-        try {
-            // Set coercion type to text since we want to apply formatting
-            const options = { coercionType: Office.CoercionType.Text };
-
-            // Construct the watermark text with formatting
-            const watermarkText = `
-                <div style="font-size: 120px; font-weight: bold; color: #FF0000;">CONFIDENTIAL</div>
-            `;
-
-            // Insert the watermark HTML with styling into the current selection
-            await Office.context.document.setSelectedDataAsync(watermarkText, options);
-        } catch (error) {
-            console.error("Error inserting watermark:", error);
-        }
-    }
-</script>
-
 </html>
